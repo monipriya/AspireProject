@@ -58,7 +58,7 @@
                 <asp:RegularExpressionValidator ID="validate" runat="server" ControlToValidate="txtPassword" ErrorMessage="password must contain atleast 6 characters,including UPPER/lowercase letters" ValidationExpression="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" Style="color: red"></asp:RegularExpressionValidator>
                 </td>
              </tr>  
-                <tr>  
+                <tr>
                     <td>Confirm Password</td>  
                     <td>  
                         <asp:TextBox ID="txtConfirmPassword" runat="server" TextMode="Password"></asp:TextBox>  

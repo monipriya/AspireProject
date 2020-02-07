@@ -16,7 +16,7 @@ namespace LoginForm
             string gender=txtGender.Text;
             DateTime DOB = Convert.ToDateTime(txtDOB.Text);
             string bloodGroup = txtBloodGroup.Text;
-            string address = txtLocation.Text;
+            string address = txtLocation.Text; 
             string EmailId = txtEmailID.Text;
             string password = txtPassword.Text;
             string confirmPassword =txtConfirmPassword.Text;
