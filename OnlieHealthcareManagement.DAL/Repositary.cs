@@ -1,76 +1,75 @@
-﻿
-using System;
+﻿using System;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
-namespace LoginForm
+using OnlineHealthcareManagement.Entity;
+namespace OnlineHealthcareManagement.DAL
 {
     public class Repositary
     {
-        string connectionString = ConfigurationManager.ConnectionStrings["Connection"].ConnectionString;
-      
-        public int PatientData(string name,string gender,DateTime dob,string bloodGroup,string number,string location,string email, string password,string confirmPassword)
+      static string connectionString = ConfigurationManager.ConnectionStrings["Connection"].ConnectionString;
+      public static int AddPatient(PatientDetails patient)
         {
             SqlConnection connection = new SqlConnection(connectionString);
             string query = "SP_Patient_ADD";
             int rows;
-          
-            using (SqlCommand sqlCommand = new SqlCommand(query,connection))
+
+            using (SqlCommand sqlCommand = new SqlCommand(query, connection))
             {
-                
+
                 sqlCommand.CommandType = CommandType.StoredProcedure;
                 SqlParameter param = new SqlParameter();
                 param = new SqlParameter();
                 param.ParameterName = "@name";
-                param.Value = name;
+                param.Value = patient.name;
                 param.SqlDbType = SqlDbType.VarChar;
                 sqlCommand.Parameters.Add(param);
 
                 param = new SqlParameter();
                 param.ParameterName = "@sex";
-                param.Value = gender;
+                param.Value = patient.sex;
                 param.SqlDbType = SqlDbType.VarChar;
                 sqlCommand.Parameters.Add(param);
 
                 param = new SqlParameter();
                 param.ParameterName = "@DOB";
-                param.Value = gender;
+                param.Value =patient.dob;
                 param.SqlDbType = SqlDbType.VarChar;
                 sqlCommand.Parameters.Add(param);
 
                 param = new SqlParameter();
                 param.ParameterName = "@bloodGroup";
-                param.Value = bloodGroup;
+                param.Value =patient.bloodGroup;
                 param.SqlDbType = SqlDbType.VarChar;
                 sqlCommand.Parameters.Add(param);
 
                 param = new SqlParameter();
                 param.ParameterName = "@mobileNumber";
-                param.Value = number;
+                param.Value = patient.mobilenumber;
                 param.SqlDbType = SqlDbType.VarChar;
                 sqlCommand.Parameters.Add(param);
 
                 param = new SqlParameter();
                 param.ParameterName = "@city";
-                param.Value = location;
+                param.Value =patient.city;
                 param.SqlDbType = SqlDbType.VarChar;
                 sqlCommand.Parameters.Add(param);
 
                 param = new SqlParameter();
                 param.ParameterName = "@mailId";
-                param.Value = email;
+                param.Value = patient.mailId;
                 param.SqlDbType = SqlDbType.VarChar;
                 sqlCommand.Parameters.Add(param);
 
                 param = new SqlParameter();
                 param.ParameterName = "@password";
-                param.Value = password;
+                param.Value =patient. password;
                 param.SqlDbType = SqlDbType.VarChar;
                 sqlCommand.Parameters.Add(param);
 
                 param = new SqlParameter();
                 param.ParameterName = "@confirmPassword";
-                param.Value = location;
+                param.Value = patient.confirmPassword;
                 param.SqlDbType = SqlDbType.VarChar;
                 sqlCommand.Parameters.Add(param);
                 connection.Open();
@@ -78,7 +77,7 @@ namespace LoginForm
             }
             return rows;
         }
-        public bool ValidateLogin(string username,string password)
+         public static bool ValidateLogin(string username,string password)
         {
             bool isValue=false;
             SqlConnection connection =  new SqlConnection(connectionString);

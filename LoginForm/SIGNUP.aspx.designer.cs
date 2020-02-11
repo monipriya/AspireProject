@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace LoginForm {
+namespace OnlineHealthcareManagementSystem {
     
     
     public partial class SIGNUP {

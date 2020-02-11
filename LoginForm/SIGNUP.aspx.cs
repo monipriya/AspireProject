@@ -1,6 +1,7 @@
 ﻿using System;
-
-namespace LoginForm
+using OnlineHealthcareManagement.BL;
+using OnlineHealthcareManagement.Entity;
+namespace OnlineHealthcareManagementSystem
 {
     public partial class SIGNUP : System.Web.UI.Page
     {
@@ -20,11 +21,11 @@ namespace LoginForm
             string EmailId = txtEmailID.Text;
             string password = txtPassword.Text;
             string confirmPassword =txtConfirmPassword.Text;
-            Repositary user = new Repositary();
-            int rows = user.PatientData(Name,gender,DOB,bloodGroup, mobileNumber,address,EmailId, password, confirmPassword);
+            PatientDetails patient = new PatientDetails(Name, gender, DOB, bloodGroup, mobileNumber, address, EmailId, password, confirmPassword);
+            int rows = PatientBL.AddCustomer(patient);
             if (rows >= 1)
                 Response.Redirect("Login.aspx");
             }
-
+    
     }
 }

@@ -1,10 +1,10 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>9277693a-f9b4-4ecd-b21b-d20453ce5b44</ProjectGuid>
+    <ProjectGuid>{9277693A-F9B4-4ECD-B21B-D20453CE5B44}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>OnlineHealthCareManagement.BL</RootNamespace>
@@ -30,24 +30,33 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System"/>
-    
-    <Reference Include="System.Core"/>
-    <Reference Include="System.Xml.Linq"/>
-    <Reference Include="System.Data.DataSetExtensions"/>
-    
-    
-    <Reference Include="Microsoft.CSharp"/>
-    
-    <Reference Include="System.Data"/>
-    
-    <Reference Include="System.Net.Http"/>
-    
-    <Reference Include="System.Xml"/>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="PatientBL.cs" />
+    <Compile Include="PatientUpdateBL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\OnlieHealthCareManagement.Common\OnlineHealthcareManagement.Common.csproj">
+      <Project>{c4e55664-611b-4573-a1fd-06e75eaf164b}</Project>
+      <Name>OnlineHealthcareManagement.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\OnlieHealthcareManagement.DAL\OnlineHealthcareManagement.DAL.csproj">
+      <Project>{dcdfb17d-cd73-4cfb-a400-d4a91ed07c12}</Project>
+      <Name>OnlineHealthcareManagement.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\OnlieHealthcareManagement.Entity\OnlineHealthcareManagement.Entity.csproj">
+      <Project>{d4c7fa65-74ab-4c30-ba6b-88c5364df684}</Project>
+      <Name>OnlineHealthcareManagement.Entity</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
@@ -57,5 +66,4 @@
   <Target Name="AfterBuild">
   </Target>
   -->
-
- </Project>
+</Project>

@@ -11,6 +11,8 @@
 <body>
     <form id="form1" runat="server">
     <div>
+        
+        <asp:HyperLink ID="Admin" runat="server" Text="AdminGrid" NavigateUrl="~/Main.aspx"></asp:HyperLink>
         <asp:HyperLink ID="signIn" runat="server" Text="SignIn" NavigateUrl="~/Login.aspx"></asp:HyperLink>
         <asp:HyperLink ID="signUp" runat="server" Text="SignUp" NavigateUrl="~/SIGNUP.aspx"></asp:HyperLink>
         <asp:ContentPlaceHolder ID="ContentPlaceHolder" runat="server">

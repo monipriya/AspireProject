@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/Home.Master" AutoEventWireup="true" CodeBehind="SIGNUP.aspx.cs" Inherits="LoginForm.SIGNUP" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/Home.Master" AutoEventWireup="true" CodeBehind="SIGNUP.aspx.cs" Inherits="OnlineHealthcareManagementSystem.SIGNUP" %>
 
       <asp:Content ID="contentHead" runat="server" ContentPlaceHolderID="head"></asp:Content>
     <asp:Content ID="logIn" runat="server" ContentPlaceHolderID="ContentPlaceHolder">
